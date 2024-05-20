@@ -1,6 +1,5 @@
 import React from 'react'
 import HeroContainer from './Hero/HeroContainer'
-import Gallary from './Gallary/Gallary'
 import PopulerClases from './PopulerDonations/PopulerDonations'
 import PopularCoaches from './PopularVolunteers/PopularVolunteers'
 import { useAuth } from '../../hooks/useAuth'
@@ -13,7 +12,6 @@ const Home = () => {
     <div>
       <HeroContainer/>
       <div className='max-w-screen-x1 mx-auto'>
-      <Gallary/>
       <PopulerClases/> 
       <PopularCoaches/>
       </div>
