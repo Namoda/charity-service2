@@ -1,63 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import useAxiosFetch from '../../../hooks/useAxiosFetch';
-import img from '../../../assets/home/girl.png';
+import React, { useEffect, useState } from "react";
+import useAxiosFetch from "../../../hooks/useAxiosFetch";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import img from '../../../assets/home/girl.jpg'
 
-const PopularVolunteers = () => {
+const PopularVolunteer = () => {
   const [volunteers, setVolunteers] = useState([]);
+  console.log(volunteers);
   const axiosFetch = useAxiosFetch();
-  
+
   useEffect(() => {
-    axiosFetch.get('/popular-volunteers')
-      .then((data) => setVolunteers(data.data))
+    axiosFetch
+      .get("/popular-volunteer")
+      .then((data) => {
+        setInstructors(data.data);
+      })
       .catch((err) => console.log(err));
   }, []);
-  
+   
   return (
-    <div className='container mx-auto my-36 px-4'>
-      <div className='text-center mb-16'>
-        <h1 className='text-5xl font-bold'>Our <span className='text-secondary'>Best</span> Volunteers</h1>
-        <p className='text-gray-500 my-4 animate-text'>
+    <div className="my-28">
+      <div className="mb-20">
+        <h1 className="text-5xl font-bold text-center text-secondary">
+          Our <span className="text-black dark:text-white">Amazing</span>{" "}
+          Volunteers
+        </h1>
+        <div className="w-[40%] text-center mx-auto my-4">
+          <p className="text-gray-500">
           Volunteers are vital for Kind Heart Charity Service, extending reach, offering diverse skills,
           minimizing costs, fostering community connections, and bringing passion and dedication.
-        </p>
+          </p>
+        </div>
       </div>
-      <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
-        {volunteers.slice(0, 4).map((volunteer, i) => (
-          <div key={i} className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300'>
-            <img className='w-24 h-24 rounded-full mx-auto mb-4 border-4 border-gray-300' src={volunteer?.volunteer?.photoUrl || img} alt="Volunteer" />
-            <div className='text-center'>
-              <p className='font-medium text-lg text-gray-800 dark:text-white'>{volunteer?.volunteer?.name}</p>
-              <p className='text-gray-500'>Volunteer</p>
-              <p className='text-gray-500'>Total Donors: {volunteer?.totalEnrolled}</p>
+
+      {
+        volunteers ? <><div className="grid mb-28 md:grid-cols-2 lg:grid-cols-4 mx-auto w-[90%] gap-6">
+        {volunteers?.map((volunteer, i) => (
+          <div
+            key={i}
+            className="flex dark:text-white hover:-translate-y-2 duration-200 cursor-pointer flex-col shadow-md py-8 px-10 md:px-8 rounded-md"
+          >
+            <div className="flex flex-col gap-6 md:gap-8">
+              <img
+                className="rounded-full border-4 border-gray-300 h-24 w-24 mx-auto"
+                src={volunteer?.volunteer?.photoUrl || `${img}`}
+                alt=""
+              />
+              <div className="flex flex-col text-center">
+                <div className="font-medium text-lg dark:text-white text-gray-800">
+                  {volunteer?.volunteer?.name}
+                </div>
+                <div className="text-gray-500  whitespace-nowrap">
+                  Volunteer
+                </div>
+                <div className="text-gray-500 mb-4 whitespace-nowrap">
+                  Total Students : {volunteer?.totalEnrolled}
+                </div>
+                <div className="flex flex-row items-center justify-center gap-4 text-gray-800 my-auto text-2xl mx-auto md:mx-0">
+                  <a className="hover:cursor-pointer text-secondary duration-300">
+                    <FaLinkedin />
+                  </a>
+                  <a className="hover:cursor-pointer text-secondary duration-300">
+                    <FaFacebook />
+                  </a>
+                  <a className="hover:cursor-pointer text-secondary duration-300">
+                    <FaInstagram />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-      <style jsx>{`
-        @keyframes text-fade-in {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes text-bounce {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        .animate-text {
-          animation: text-fade-in 1s ease-out forwards, text-bounce 3s ease-in-out infinite;
-        }
-      `}</style>
+        ))} 
+      </div></> : <p>No Volunteer Available</p>
+      }
     </div>
   );
-}
+};
 
-export default PopularVolunteers;
+export default PopularVolunteer;

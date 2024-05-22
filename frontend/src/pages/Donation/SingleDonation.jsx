@@ -109,7 +109,7 @@ const SingleDonation = () => {
                       </div>
                       <div className="flex-1">
                         <p className=" text-secondary  ">
-                          Trainer
+                          voleenter
                           <a href="#" className=" text-black">
                             : {donation?.donnerName}
                           </a>
@@ -127,20 +127,7 @@ const SingleDonation = () => {
                   </div>
 
                   <div className="nav-tab-wrapper mt-12">
-                    <ul id="tabs-nav" className=" course-tab mb-8">
-                      <li className="active">
-                        <a href="#tab1">Overview</a>
-                      </li>
-                      <li>
-                        <a href="#tab2">Order of Donation</a>
-                      </li>
-                      <li>
-                        <a href="#tab3">Instructor</a>
-                      </li>
-                      <li>
-                        <a href="#tab4">Reviews</a>
-                      </li>
-                    </ul>
+                   
                     <div id="tabs-content ">
                       <div id="tab1" className="tab-content">
                         <div>
@@ -207,7 +194,7 @@ const SingleDonation = () => {
                               </div>
                               <div className=" bg-white  rounded px-5 py-[18px] flex  shadow-box2 space-x-[10px] items-center">
                                 <div className="flex-none">
-                                  <img src="/logo.png" alt="" />
+                                  
                                 </div>
                                 <span className="flex-1 text-black">
                                   Paper &amp; Pencil
@@ -215,7 +202,7 @@ const SingleDonation = () => {
                               </div>
                               <div className=" bg-white  rounded px-5 py-[18px] flex  shadow-box2 space-x-[10px] items-center">
                                 <div className="flex-none">
-                                  <img src="/logo.png" alt="" />
+                                  
                                 </div>
                                 <span className="flex-1 text-black">
                                   Internet Connect
@@ -279,7 +266,7 @@ const SingleDonation = () => {
                           Volunteer
                           </div>
                         </div>
-                        <div className="flex-none">{donation?.coachName}</div>
+                        <div className="flex-none">{donation?.volunteerName}</div>
                       </li>
 
                       <li className=" flex space-x-3 border-b border-[#ECECEC] mb-4 pb-4 last:pb-0 past:mb-0 last:border-0">
@@ -323,115 +310,12 @@ const SingleDonation = () => {
                       </li>
 
                     </ul>
-                    <ul className="flex space-x-4 items-center pt-3 ">
-                      <li className=" text-black font-semibold">Share On:</li>
-                      <li>
-                        <a href="#" className="flex h-10 w-10">
-                          <img src="/logo.png" alt="" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="flex h-10 w-10">
-                          <img src="/logo.png" alt="" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="flex h-10 w-10">
-                          <img src="/logo.png" alt="" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="flex h-10 w-10">
-                          <img src="/logo.png" alt="" />
-                        </a>
-                      </li>
-                    </ul>
+                  
                   </div>
 
-                  <div className="wdiget">
-                    <h4 className=" widget-title">Related Donations</h4>
-                    <ul className="list">
-                      <li className=" flex space-x-4 border-[#ECECEC] pb-6 mb-6 last:pb-0 last:mb-0 last:border-0 border-b">
-                        <div className="flex-none ">
-                          <div className="h-20 w-20  rounded">
-                            <img
-                              src="/src/assets/home/banner-1.jpg"
-                              alt=""
-                              className=" w-full h-full object-cover rounded"
-                            />
-                          </div>
-                        </div>
-                        <div className="flex-1 ">
-                          <div className="flex space-x-3 mb-2">
-                            <iconify-icon
-                              icon="heroicons:star-20-solid"
-                              className=" text-tertiary"
-                            ></iconify-icon>
-                            <iconify-icon
-                              icon="heroicons:star-20-solid"
-                              className=" text-tertiary"
-                            ></iconify-icon>
-                            <iconify-icon
-                              icon="heroicons:star-20-solid"
-                              className=" text-tertiary"
-                            ></iconify-icon>
-                            <iconify-icon
-                              icon="heroicons:star-20-solid"
-                              className=" text-tertiary"
-                            ></iconify-icon>
-                            <iconify-icon
-                              icon="heroicons:star-20-solid"
-                              className=" text-tertiary"
-                            ></iconify-icon>
-                          </div>
-                          <div className="mb-1 font-semibold text-black">
-                            Greatest Passion In...
-                          </div>
-                          <span className=" text-secondary font-semibold">
-                            $38.00
-                          </span>
-                        </div>
-                      </li>
-                      <li className=" flex space-x-4 border-[#ECECEC] pb-6 mb-6 last:pb-0 last:mb-0 last:border-0 border-b">
-                        <div className="flex-none ">
-                          <div className="h-20 w-20  rounded">
-                            <img
-                               src="/src/assets/home/banner-1.jpg"
-                              alt=""
-                              className=" w-full h-full object-cover rounded"
-                            />
-                          </div>
-                        </div>
-                        <div className="flex-1 ">
-                          <div className="mb-1 font-semibold text-black">
-                            Greatest Passion In...
-                          </div>
-                          <span className=" text-secondary font-semibold">
-                            $38.00
-                          </span>
-                        </div>
-                      </li>
-                      <li className=" flex space-x-4 border-[#ECECEC] pb-6 mb-6 last:pb-0 last:mb-0 last:border-0 border-b">
-                        <div className="flex-none ">
-                          <div className="h-20 w-20  rounded">
-                            <img
-                              src="/src/assets/home/banner-1.jpg"
-                              alt=""
-                              className=" w-full h-full object-cover rounded"
-                            />
-                          </div>
-                        </div>
-                        <div className="flex-1 ">
-                          <div className="mb-1 font-semibold text-black">
-                            Greatest Passion In...
-                          </div>
-                          <span className=" text-secondary font-semibold">
-                            $38.00
-                          </span>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                  
+                     
+                  
                 </div>
               </div>
             </div>
