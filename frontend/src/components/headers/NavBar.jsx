@@ -142,8 +142,8 @@ const NavBar = () => {
                     {/* Logo */}
                     <div onClick={() => navigate('/')} className="flex-shrink-0 cursor-pointer pl-7 md:p-0 flex items-center">
                         <div className={``}>
-                            <h1 className='text-2xl font-Cinzel  inline-flex gap-3  items-center font-bold'> <img src="/logo.png" alt="" className='w-8 h-8' /></h1>
-                            <p className='font-bold text-[13px]  tracking-[8px]'>Quick Explore</p>
+                            <h1 className='text-2xl font-Cinzel  inline-flex gap-3  items-center font-bold'>Kind Heart Charity Service <img src="/logo.png" alt="" className='w-12 h-12' /></h1>
+                           
                         </div>
                     </div>
 

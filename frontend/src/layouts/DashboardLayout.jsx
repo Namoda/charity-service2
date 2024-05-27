@@ -29,7 +29,6 @@ const donner = [
   { to: "/dashboard/enrolled-donation", icon: <SiGoogleclassroom className="text-2xl" />, label: "My Enroll" },
   { to: "/dashboard/my-selected", icon: <BiSelectMultiple className="text-2xl" />, label: "My Selected" },
   { to: "/dashboard/my-payments", icon: <MdPayments className="text-2xl" />, label: "Payment History" },
-  { to: "/dashboard/apply-volunteer", icon: <SiInstructure className="text-2xl" />, label: "Apply for Volunteer" },
 ];
 
 const lastMenuItems = [

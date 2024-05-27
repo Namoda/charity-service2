@@ -53,6 +53,10 @@ export const router = createBrowserRouter([
                 path: "/gallary",
                 element: <Gallary/>
             },
+            {
+                path: "apply-volunteer",
+                element: <AsVolunteer/>
+            },
 
 
         ]

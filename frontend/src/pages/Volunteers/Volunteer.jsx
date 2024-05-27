@@ -1,53 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import useAxiosFetch from '../../hooks/useAxiosFetch';
-import img from "../../assets/home/girl.jpg"
-
-const Volunteers = () => {
-
-  const [Volunteers, setVolunteers] = useState([]);
-    const axiosFetch = useAxiosFetch();
-    useEffect(()=> {
-        axiosFetch.get('/Volunteers').then((data) =>{
-           setVolunteers(data.data) 
-        }).catch((err) => {console.log(err)})
-    }, []);
-    console.log(Volunteers)
-
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+const WebPage = () => {
   return (
-    <div className='md:w-[80%] mx-auto my-36'>
-    <div>
-        <h1 className='text-5xl font-bold text-center'>Our <span className='text-secondary'>Best</span> Volunteeers</h1>
-        
-    <div className='w-[40%] text-center mx-auto my-4'>
-        <p className = 'text-gray-500'>We appreciate your involvement as a volunteers for 
-        this opportunity.</p>
-    </div>
-    </div>
-    {
-        Volunteers ? <>
-<div className='gird mb-28 md:grid-flow-cols-2 lg:grid-cols-4 w-[90%] gap-4 mx-auto'>
-{
-    Volunteers?.slice(0,4).map((Volunteers, i) =>(
-        <div className='flex dark:text-white hover:-translate-y-2 duration-200 cursor-pointer flex-col shadow-md px-8 rounded-md'>
-            <div className='flex-col flex gap-6 md:gap-8'>
-                <img className="rounded-full border-4 border-gray-300 h-24 w-24 mx-auto"src={Volunteers?.Volunteers?.photoUrl || `${img}`} alt=""/>
-                <div className='flex flex-col text-center'>
-                    <p className='font-medium text-lg dark:text-white text-gray-800'>{Volunteers?.Volunteers?.name}</p>
-                    <p className='text-gray-500 whitespace-nowrap'>Volunteers</p>
-                    <p className='text-gray-500 whitespace-nowrap'>Total Dornner:
-                    {Volunteers?.totalEnrolled}</p>
-                </div>
-                </div>
-                </div>
-    ))
-}
-</div>
-</> :<><p>No Volunteers Availble</p></>   
-    }
-    
-    </div>
-  )
-}
+    <div className="flex h-screen">
+      {/* Left side with the image */}
+      <div className="w-1/2">
+        <img
+          src="https://via.placeholder.com/600x800"
+          alt="Placeholder"
+          className="object-cover h-full w-full"
+        />
+      </div>
 
-export default Volunteers
+      {/* Right side with paragraph and button */}
+      <div className="w-1/2 flex flex-col justify-center items-center bg-[#FFB1B1] p-8">
+        <p className="text-2xl mb-6 text-center">
+          Join our dedicated team at CharityWorks and make a real difference in the community. We offer a variety of volunteer opportunities to suit your skills and interests. Whether you're passionate about helping the homeless, mentoring youth, or supporting environmental initiatives, we have a place for you. Click the button below to start your volunteer journey with us today!
+        </p>
+        <Link to={`/apply-volunteer`}>
+                                    <button className="px-4 py-2 mt-4 w-full text-white bg-secondary rounded hover:bg-red-400">
+                                        Join Us
+                                    </button>
+                                </Link>
+      </div>
+    </div>
+  );
+};
+
+export default WebPage;
