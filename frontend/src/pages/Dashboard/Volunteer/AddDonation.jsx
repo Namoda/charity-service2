@@ -143,19 +143,7 @@ const AddDonation = () => {
                         />
                     </div>
                 </div>
-                <div className="mb-6">
-                    <label className="block text-gray-700 font-bold mb-2" htmlFor="videoLink">
-                        YouTube Link
-                    </label>
-                    <p className="text-sm text-gray-500 mb-2">Only YouTube videos are supported</p>
-                    <input
-                        className="w-full px-4 py-2 border border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-secondary"
-                        type="text"
-                        required
-                        placeholder="Your course intro video link"
-                        name="videoLink"
-                    />
-                </div>
+              
                 <div className="mb-6">
                     <label className="block text-gray-700 font-bold mb-2" htmlFor="description">
                         Description About Your Donation

@@ -25,7 +25,7 @@ const DonnerCP = () => {
                 </p>
                 <h2 className='font-bold text-center mb-4'>You can jump to any page you want from here:</h2>
                 <div className="flex flex-wrap items-center justify-center gap-3">
-                    <Link to='/dashboard/enrolled-class' className="border border-secondary rounded-lg hover:bg-secondary hover:text-white duration-200 px-4 py-2 text-center">
+                    <Link to='/dashboard/enrolled-donation' className="border border-secondary rounded-lg hover:bg-secondary hover:text-white duration-200 px-4 py-2 text-center">
                         My Enroll
                     </Link>
                     <Link to='/dashboard/my-selected' className="border border-secondary rounded-lg hover:bg-secondary hover:text-white duration-200 px-4 py-2 text-center">

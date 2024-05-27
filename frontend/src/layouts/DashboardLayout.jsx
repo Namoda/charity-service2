@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { useUser } from '../hooks/useUser';
-import { BiHomeAlt, BiLogInCircle, BiSelectMultiple } from "react-icons/bi";
-import { FaHome, FaUsers } from "react-icons/fa";
-import { IoSchoolSharp } from "react-icons/io5";
-import { BsFillPostcardFill } from 'react-icons/bs';
-import { SiGoogleclassroom, SiInstructure } from 'react-icons/si';
-import { MdExplore, MdPayments } from 'react-icons/md';
+import { BiHomeAlt, BiLogInCircle, BiDonateHeart } from "react-icons/bi";
+import { FaHome, FaUsers, FaHandsHelping } from "react-icons/fa";
+import { IoIosAddCircle, IoIosGift } from "react-icons/io";
+import { BsCardChecklist } from 'react-icons/bs';
+import { MdOutlinePayment, MdOutlineVolunteerActivism } from 'react-icons/md';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Scroll from '../hooks/useScroll';
@@ -15,26 +14,24 @@ import { ClockLoader } from 'react-spinners';
 const adminNavItems = [
   { to: "/dashboard/admin-home", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard Home" },
   { to: "/dashboard/manage-users", icon: <FaUsers className="text-2xl" />, label: "Manage Users" },
-  { to: "/dashboard/manage-donation", icon: <BsFillPostcardFill className="text-2xl" />, label: "Manage Donation" },
+  { to: "/dashboard/manage-donation", icon: <BsCardChecklist className="text-2xl" />, label: "Manage Donations" },
 ];
 
 const volunteerNavItem = [
   { to: "/dashboard/volunteer-cp", icon: <FaHome className="text-2xl" />, label: "Home" },
-  { to: "/dashboard/add-donation", icon: <MdExplore className="text-2xl" />, label: "Add A Donation" },
-  { to: "/dashboard/my-donations", icon: <IoSchoolSharp className="text-2xl" />, label: "My Donations" },
+  { to: "/dashboard/add-donation", icon: <IoIosAddCircle className="text-2xl" />, label: "Add A Donation" },
+  { to: "/dashboard/my-donations", icon: <BiDonateHeart className="text-2xl" />, label: "My Donations" },
 ];
 
-const donner = [
-  { to: "/dashboard/donner-cp", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard" },
-  { to: "/dashboard/enrolled-donation", icon: <SiGoogleclassroom className="text-2xl" />, label: "My Enroll" },
-  { to: "/dashboard/my-selected", icon: <BiSelectMultiple className="text-2xl" />, label: "My Selected" },
-  { to: "/dashboard/my-payments", icon: <MdPayments className="text-2xl" />, label: "Payment History" },
+const donorNavItems = [
+  { to: "/dashboard/donor-cp", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard" },
+  { to: "/dashboard/enrolled-donation", icon: <IoIosGift className="text-2xl" />, label: "My Donations" },
+  { to: "/dashboard/my-selected", icon: <FaHandsHelping className="text-2xl" />, label: "My Selected" },
+  { to: "/dashboard/my-payments", icon: <MdOutlinePayment className="text-2xl" />, label: "Payment History" },
 ];
 
 const lastMenuItems = [
   { to: "/", icon: <BiHomeAlt className="text-2xl" />, label: "Main Home" },
-  { to: "/trending", icon: <MdExplore className="text-2xl" />, label: "Trending" },
-  { to: "/browse", icon: <FaUsers className="text-2xl" />, label: "Following" },
 ];
 
 const DashboardLayout = () => {
@@ -148,7 +145,7 @@ const DashboardLayout = () => {
         {role === 'user' && (
           <ul className="pt-6">
             <p className={`ml-3 text-light-gray-4 ${!open && "hidden"}`}><small>MENU</small></p>
-            {donner.map((menuItem, index) => (
+            {donorNavItems.map((menuItem, index) => (
               <li key={index} className="mb-2">
                 <NavLink
                   to={menuItem.to}

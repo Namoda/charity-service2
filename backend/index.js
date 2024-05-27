@@ -222,7 +222,7 @@ async function run() {
                     description: updatedDonation.description,
                     price: updatedDonation.price,
                     AmountCanbeDonations: parseInt(updatedDonation.AmountCanbeDonations),
-                    videoLink: updatedDonation.videoLink,
+                  
                     status: 'pending'
                 }
             }

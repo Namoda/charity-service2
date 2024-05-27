@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useAxiosFetch from "../../../hooks/useAxiosFetch";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import img from '../../../assets/home/girl.jpg'
 
 const PopularVolunteer = () => {
   const [volunteers, setVolunteers] = useState([]);
@@ -10,9 +9,9 @@ const PopularVolunteer = () => {
 
   useEffect(() => {
     axiosFetch
-      .get("/popular-volunteer")
+      .get('/popular-volunteers')
       .then((data) => {
-        setInstructors(data.data);
+        setVolunteers(data.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -42,12 +41,12 @@ const PopularVolunteer = () => {
             <div className="flex flex-col gap-6 md:gap-8">
               <img
                 className="rounded-full border-4 border-gray-300 h-24 w-24 mx-auto"
-                src={volunteer?.volunteer?.photoUrl || `${img}`}
+                src={volunteer?.volunteer?.photoUrl}
                 alt=""
               />
               <div className="flex flex-col text-center">
                 <div className="font-medium text-lg dark:text-white text-gray-800">
-                  {volunteer?.volunteer?.name}
+                  {volunteer?.name}
                 </div>
                 <div className="text-gray-500  whitespace-nowrap">
                   Volunteer

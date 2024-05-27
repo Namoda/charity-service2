@@ -50,7 +50,7 @@ const AsVolunteer = () => {
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <h1 className="text-center text-4xl font-bold mb-8">Apply Coach</h1>
+      <h1 className="text-center text-4xl font-bold mb-8">Apply Volunteer</h1>
       <form onSubmit={handleFormSubmit} className="bg-white p-8 rounded-lg shadow-md">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>

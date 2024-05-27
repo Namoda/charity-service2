@@ -96,7 +96,7 @@ const About = () => {
           <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800">Find Us Here</h2>
           <div className="flex justify-center">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345092054!2d144.9537363158667!3d-37.81627974202196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577ce98cfd93e0b!2sVictoria!5e0!3m2!1sen!2sau!4v1583918032071!5m2!1sen!2sau"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.776057289473!2d79.85245757475701!3d6.917355393082235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2596b1c2ae5b1%3A0x872e9262f485d782!2sColombo%20City%20Centre%20Mall%20and%20Residences!5e0!3m2!1sen!2slk!4v1716797963133!5m2!1sen!2slk"
               width="600"
               height="450"
               allowFullScreen=""

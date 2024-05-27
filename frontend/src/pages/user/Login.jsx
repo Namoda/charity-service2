@@ -32,8 +32,8 @@ const Login = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
             <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-                <h1 className="text-3xl font-bold text-center text-secondary mb-4">Get started today</h1>
-                <p className="text-center text-gray-500 mb-6">Explore our comprehensive, meticulously crafted to cater to all levels of expertise.</p>
+                <h1 className="text-3xl font-bold text-center text-secondary mb-4">Login Here!</h1>
+                <p className="text-center text-gray-500 mb-6">Login And Help Save A World</p>
                 <form onSubmit={handelSubmit} className="space-y-6">
                     <p className="text-center text-red-400 text-lg font-medium">Sign in to your account</p>
                     {error && <p className="text-center text-red-400 text-sm font-medium">{error}</p>}
