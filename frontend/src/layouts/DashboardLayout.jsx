@@ -15,16 +15,17 @@ const adminNavItems = [
   { to: "/dashboard/admin-home", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard Home" },
   { to: "/dashboard/manage-users", icon: <FaUsers className="text-2xl" />, label: "Manage Users" },
   { to: "/dashboard/manage-donation", icon: <BsCardChecklist className="text-2xl" />, label: "Manage Donations" },
+  { to: "/dashboard/manage-application", icon: <BsCardChecklist className="text-2xl" />, label: "Application" },
 ];
 
-const volunteerNavItem = [
+const volunteerNavItems = [
   { to: "/dashboard/volunteer-cp", icon: <FaHome className="text-2xl" />, label: "Home" },
-  { to: "/dashboard/add-donation", icon: <IoIosAddCircle className="text-2xl" />, label: "Add A Donation" },
+  { to: "/dashboard/add-donation", icon: <IoIosAddCircle className="text-2xl" />, label: "Add Donation" },
   { to: "/dashboard/my-donations", icon: <BiDonateHeart className="text-2xl" />, label: "My Donations" },
 ];
 
 const donorNavItems = [
-  { to: "/dashboard/donor-cp", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard" },
+  { to: "/dashboard/donner-cp", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard" },
   { to: "/dashboard/enrolled-donation", icon: <IoIosGift className="text-2xl" />, label: "My Donations" },
   { to: "/dashboard/my-selected", icon: <FaHandsHelping className="text-2xl" />, label: "My Selected" },
   { to: "/dashboard/my-payments", icon: <MdOutlinePayment className="text-2xl" />, label: "Payment History" },
@@ -32,6 +33,7 @@ const donorNavItems = [
 
 const lastMenuItems = [
   { to: "/", icon: <BiHomeAlt className="text-2xl" />, label: "Main Home" },
+  { to: "/dashboard/contact", icon: <BiHomeAlt className="text-2xl" />, label: "Contact Us" },
 ];
 
 const DashboardLayout = () => {
@@ -42,48 +44,52 @@ const DashboardLayout = () => {
 
   const handleLogout = () => {
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, log me out!'
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, log me out!'
     }).then((result) => {
       if (result.isConfirmed) {
-          logout()
-              .then(() => {
-                  Swal.fire(
-                      'Logged out..!',
-                      'You are logged out.',
-                      'success'
-                  )
-                  navigate("/");
-              })
-              .catch((err) => {
-                  Swal.fire(
-                      'Error!',
-                      err.message,
-                      'error'
-                  )
-              })
+        logout()
+          .then(() => {
+            Swal.fire(
+              'Logged out..!',
+              'You are logged out.',
+              'success'
+            )
+            navigate("/");
+          })
+          .catch((err) => {
+            Swal.fire(
+              'Error!',
+              err.message,
+              'error'
+            )
+          })
       }
-  })
-}
+    })
+  }
 
   const role = currentUser?.role;
 
-  if(loader){
+  if (loader) {
     return (
       <div className='flex justify-center items-center h-screen'>
-        <ClockLoader color="#36d7b7" size={50} />
+        
       </div>
     );
   }
 
+  const getBackgroundColor = () => {
+    return role === 'volunteer' ? '#FFB1B1' : '#FFFFFF'; // Set your desired default color
+  }
+
   return (
     <div className="flex">
-      <div className={`${open ? "w-72 overflow-y-auto" : "w-[90px] overflow-auto"} bg-[#FFB1B1] h-screen p-5 hidden md:block pt-8 relative duration-300`}>
+      <div className={`h-screen ${open ? "w-72" : "w-[90px]"} bg-[#FFB1B1] p-5 hidden md:block pt-8 relative duration-300`}>
         <div className="flex gap-x-4 items-center">
           <img
             src='/logo.png'
@@ -124,7 +130,7 @@ const DashboardLayout = () => {
         {role === 'volunteer' && (
           <ul className="pt-6">
             <p className={`ml-3 text-light-gray-4 ${!open && "hidden"}`}><small>MENU</small></p>
-            {volunteerNavItem.map((menuItem, index) => (
+            {volunteerNavItems.map((menuItem, index) => (
               <li key={index} className="mb-2">
                 <NavLink
                   to={menuItem.to}
@@ -195,7 +201,7 @@ const DashboardLayout = () => {
           </li>
         </ul>
       </div>
-      <div className="h-screen overflow-y-auto px-8 flex-1 bg-[#FFB1B1]">
+      <div className="h-screen overflow-y-auto px-8 flex-1" style={{ backgroundColor: getBackgroundColor() }}>
         <Scroll />
         <Outlet />
       </div>
@@ -204,3 +210,4 @@ const DashboardLayout = () => {
 };
 
 export default DashboardLayout;
+

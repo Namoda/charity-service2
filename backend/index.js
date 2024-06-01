@@ -412,6 +412,7 @@ async function run() {
         app.get('/volunteers', async (req, res) => {
             const result = await userCollection.find({ role: 'volunteer' }).toArray();
             res.send(result);
+            
         })
 
 

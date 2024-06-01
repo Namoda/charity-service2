@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="relative min-h-screen flex flex-col justify-center items-center text-white p-8 md:p-16 text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
         <div className="space-y-6 max-w-3xl">
           <p className="md:text-4xl text-2xl font-semibold">Join Us</p>
-          <h1 className="md:text-7xl text-4xl font-bold leading-tight animate-heading">
+          <h1 className="md:text-7xl text-4xl font-bold leading-tight">
             Kind Heart Charity Service
           </h1>
           <div className="md:w-full">
@@ -56,17 +56,6 @@ const Hero = () => {
           opacity: 0;
           display: inline-block;
           animation: fade-in-up 0.2s forwards;
-        }
-        @keyframes heading-bounce {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-        .animate-heading {
-          animation: heading-bounce 1.5s ease-in-out infinite;
         }
       `}</style>
     </div>

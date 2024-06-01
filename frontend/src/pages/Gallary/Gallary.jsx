@@ -1,69 +1,34 @@
 import React from 'react';
 
-import image2 from '../../assets/gallary/image2.jpg';
-import image3 from '../../assets/gallary/image3.jpg';
-import image4 from '../../assets/gallary/image4.jpg';
-import image5 from '../../assets/gallary/image5.jpg';
-import image8 from '../../assets/gallary/image8.jpg';
-import image9 from '../../assets/gallary/image9.jpg';
+const memories = [
+  { id: 1, title: 'Helping Hands Event', date: '2023-05-10', img: 'https://example.com/photo1.jpg' },
+  { id: 2, title: 'Community Clean Up', date: '2023-04-22', img: 'https://example.com/photo2.jpg' },
+  { id: 3, title: 'Food Drive', date: '2023-03-15', img: 'https://example.com/photo3.jpg' },
+  // Add more memories as needed
+];
 
-const Gallery = () => {
+const MemoriesPage = () => {
   return (
-    <div className="container mx-auto my-28 px-4">
-      <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold">Our Gallery</h1>
-      </div>
-      <div className="grid md:grid-cols-1 gap-2">
-        <img
-          src={image4}
-          alt="Gallery Image 4"
-          className="w-full h-96 object-cover rounded-md transition-transform duration-700 transform hover:scale-105 shadow-lg hover:shadow-2xl animate-image"
-        />
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-          <img
-            src={image2}
-            alt="Gallery Image 2"
-            className="w-full h-80 md:h-60 object-cover rounded-md transition-transform duration-700 transform hover:scale-105 shadow-lg hover:shadow-2xl animate-image"
-          />
-          <img
-            src={image3}
-            alt="Gallery Image 3"
-            className="w-full h-60 md:h-80 object-cover rounded-md transition-transform duration-700 transform hover:scale-105 shadow-lg hover:shadow-2xl animate-image"
-          />
-          <img
-            src={image5}
-            alt="Gallery Image 5"
-            className="w-full h-60 object-cover rounded-md transition-transform duration-700 transform hover:scale-105 shadow-lg hover:shadow-2xl animate-image"
-          />
-          <img
-            src={image8}
-            alt="Gallery Image 8"
-            className="w-full h-80 object-cover rounded-md transition-transform duration-700 transform hover:scale-105 shadow-lg hover:shadow-2xl animate-image"
-          />
-          <img
-            src={image9}
-            alt="Gallery Image 9"
-            className="w-full h-60 object-cover rounded-md transition-transform duration-700 transform hover:scale-105 shadow-lg hover:shadow-2xl animate-image"
-          />
+    <div className="min-h-screen bg-gray-100 py-12">
+      <div className="max-w-6xl mx-auto px-6">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12 p-11">Memories</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {memories.map(memory => (
+            <div
+              key={memory.id}
+              className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+            >
+              <img src={memory.img} alt={memory.title} className="w-full h-56 object-cover" />
+              <div className="p-6">
+                <h2 className="text-2xl font-semibold text-gray-800">{memory.title}</h2>
+                <p className="text-gray-600 mt-2">{new Date(memory.date).toLocaleDateString()}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-      <style jsx>{`
-        @keyframes image-fade-in {
-          0% {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        .animate-image {
-          animation: image-fade-in 1.5s ease-in-out;
-        }
-      `}</style>
     </div>
   );
 };
 
-export default Gallery;
+export default MemoriesPage;

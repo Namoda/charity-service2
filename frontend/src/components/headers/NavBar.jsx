@@ -24,7 +24,7 @@ const navLinks = [
         route: '/about'
     },
     { 
-        name: 'Gallary', 
+        name: 'Memories', 
         route: '/gallary' 
     },
 ];
@@ -198,12 +198,7 @@ const NavBar = () => {
                                     user && <li><NavLink className='font-bold px-3 py-2 bg-secondary text-white rounded-xl' onClick={handelLogout}>Logout</NavLink></li>
                                 }
                                 <li>
-                                    <ThemeProvider theme={theme}>
-                                        <div className="flex flex-col justify-center items-center">
-                                            <Switch onChange={() => setIsDarkMode(!isDarkMode)} />
-                                            <h1 className='text-[8px]'>Light/Dark</h1>
-                                        </div>
-                                    </ThemeProvider>
+                                   
                                 </li>
                             </ul>
 

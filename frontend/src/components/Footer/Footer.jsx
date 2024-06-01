@@ -20,15 +20,15 @@ const Footer = () => {
             <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
             <div className="flex items-center mb-2">
               <FaEnvelope className="mr-2" />
-              <p>Email: info@kindheartcharity.org</p>
+              <p>Email: kindheart1234charity@gmail.com</p>
             </div>
             <div className="flex items-center mb-2">
               <FaPhone className="mr-2" />
-              <p>Phone: (123) 456-7890</p>
+              <p>Phone: (077) 701-8575</p>
             </div>
             <div className="flex items-center">
               <FaMapMarkerAlt className="mr-2" />
-              <p>Location: 123 Charity St, Kind City, KH 12345</p>
+              <p>Location:137 Sri Jemas Piris Mawatha,Coombo 00200</p>
             </div>
           </div>
           

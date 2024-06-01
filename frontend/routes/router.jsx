@@ -7,7 +7,7 @@ import Register from "../src/pages/user/Register";
 import Donations from "../src/pages/Donation/Donations";
 import About from "../src/pages/About/About";
 import SingleDonation from "../src/pages/Donation/SingleDonation";
-import DashboardLayout from "../src/layouts/Dashboardlayout";
+
 import Dashboard from "../src/pages/Dashboard/Dashboard";
 import DonnerCP from "../src/pages/Dashboard/Donner/DonnerCP";
 import EnrolledDonations from "../src/pages/Dashboard/Donner/Enroll/EnrolledDonations";
@@ -23,6 +23,9 @@ import ManageDonations from "../src/pages/Dashboard/Admin/users/ManageDonations"
 import ManageUsers from "../src/pages/Dashboard/Admin/users/ManageUsers";
 import AdminHome from "../src/pages/Dashboard/Admin/users/AdminHome";
 import Gallary from "../src/pages/Gallary/Gallary"
+import ManageApplication from "../src/pages/Dashboard/Admin/Applications/ManageApplication";
+import DashboardLayout from "../src/layouts/DashboardLayout";
+import Contact from "../src/pages/Dashboard/link/Contact";
 
 
 
@@ -142,7 +145,16 @@ export const router = createBrowserRouter([
             path: "manage-donation",
             element: <ManageDonations/>
         },
-       
+        {
+            path: "manage-application",
+            element: <ManageApplication/>
+        },
+        {
+            path: "contact",
+            element: <Contact/>
+        },
+    
         ]
+        
     }
 ]);
