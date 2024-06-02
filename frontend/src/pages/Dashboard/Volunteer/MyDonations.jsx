@@ -18,8 +18,8 @@ const MyDonations = () => {
         .catch(err => console.log(err))
     }, [isLoading])
     
-    const handleFeedback = (id) => {
-        const theDonation = donations.find(cls => cls._id === id);
+    /*const handleFeedback = (id) => {
+        const theDonation = donations.find(don => don._id === id);
         if (theClass.reason) {
             Swal.fire(
                 'Reason For Rejected',
@@ -34,7 +34,7 @@ const MyDonations = () => {
                 'success'
             )
         }
-    }
+    }*/
 
 
     return (
@@ -62,7 +62,7 @@ const MyDonations = () => {
                                                 <div className="flex gap-5">
                                                     <div className="">
                                                         <h1 className='font-bold mb-3'>Some Info : </h1>
-                                                        <h1 className='text-secondary my-2'><span className='text-black '>Total Donner</span> : {don.totalEnrolled ? cls.totalEnrolled : 0}</h1>
+                                                        <h1 className='text-secondary my-2'><span className='text-black '>Total Donner</span> : {don.totalEnrolled ? don.totalEnrolled : 0}</h1>
                                                         <h1 className='text-secondary'><span className='text-black '>Total Donations</span> : {don.AmountCanbeDonations}</h1>
                                                         <h1 className='text-secondary my-2'><span className='text-black '>Status</span> : <span className={`font-bold ${don.status === 'pending' ? 'text-orange-400' : don.status === 'checking' ? 'text-yellow-300' : don.status === 'approved' ? 'text-green-500' : 'text-red-600'}`}>{don.status}</span></h1>
                                                     </div>

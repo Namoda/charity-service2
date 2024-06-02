@@ -2,26 +2,27 @@ import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { useUser } from '../hooks/useUser';
 import { BiHomeAlt, BiLogInCircle, BiDonateHeart } from "react-icons/bi";
-import { FaHome, FaUsers, FaHandsHelping } from "react-icons/fa";
+import { FaHome, FaUsers, FaHandsHelping, FaDonate, FaRegAddressBook } from "react-icons/fa";
 import { IoIosAddCircle, IoIosGift } from "react-icons/io";
-import { BsCardChecklist } from 'react-icons/bs';
-import { MdOutlinePayment, MdOutlineVolunteerActivism } from 'react-icons/md';
+import { BsCardChecklist, BsHouseDoor, BsPhone } from 'react-icons/bs';
+import { MdOutlinePayment, MdOutlineVolunteerActivism, MdAssignment } from 'react-icons/md';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Scroll from '../hooks/useScroll';
-import { ClockLoader } from 'react-spinners';
+import { ClockLoader, HashLoader } from 'react-spinners';
 
 const adminNavItems = [
   { to: "/dashboard/admin-home", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard Home" },
   { to: "/dashboard/manage-users", icon: <FaUsers className="text-2xl" />, label: "Manage Users" },
-  { to: "/dashboard/manage-donation", icon: <BsCardChecklist className="text-2xl" />, label: "Manage Donations" },
-  { to: "/dashboard/manage-application", icon: <BsCardChecklist className="text-2xl" />, label: "Application" },
+  { to: "/dashboard/manage-donation", icon: <FaDonate className="text-2xl" />, label: "Manage Donations" }, // Updated icon
+  { to: "/dashboard/manage-application", icon: <MdAssignment className="text-2xl" />, label: "Application" }, // Updated icon
 ];
 
 const volunteerNavItems = [
   { to: "/dashboard/volunteer-cp", icon: <FaHome className="text-2xl" />, label: "Home" },
   { to: "/dashboard/add-donation", icon: <IoIosAddCircle className="text-2xl" />, label: "Add Donation" },
   { to: "/dashboard/my-donations", icon: <BiDonateHeart className="text-2xl" />, label: "My Donations" },
+  { to: "/dashboard/my-tasks", icon: <MdOutlineVolunteerActivism className="text-2xl" />, label: "My Tasks" }, // Added matching icon for "My Tasks"
 ];
 
 const donorNavItems = [
@@ -32,8 +33,8 @@ const donorNavItems = [
 ];
 
 const lastMenuItems = [
-  { to: "/", icon: <BiHomeAlt className="text-2xl" />, label: "Main Home" },
-  { to: "/dashboard/contact", icon: <BiHomeAlt className="text-2xl" />, label: "Contact Us" },
+  { to: "/", icon: <BsHouseDoor className="text-2xl" />, label: "Main Home" }, // Updated icon
+  { to: "/dashboard/contact", icon: <BsPhone className="text-2xl" />, label: "Contact Us" }, // Updated icon
 ];
 
 const DashboardLayout = () => {
@@ -78,7 +79,10 @@ const DashboardLayout = () => {
   if (loader) {
     return (
       <div className='flex justify-center items-center h-screen'>
-        
+        <HashLoader
+  color="#a22862"
+  size={50}
+/>
       </div>
     );
   }
@@ -210,4 +214,3 @@ const DashboardLayout = () => {
 };
 
 export default DashboardLayout;
-

@@ -58,7 +58,7 @@ const EnrolledClasses = () => {
     return (
         <div>
             <div className="text-center  my-10">
-                <h1 className="text-2xl font-bold text-gray-700">Enrolled Donations</h1>
+                <h1 className="text-2xl font-bold text-gray-700">My Donations</h1>
 
             </div>
 

@@ -26,6 +26,7 @@ import Gallary from "../src/pages/Gallary/Gallary"
 import ManageApplication from "../src/pages/Dashboard/Admin/Applications/ManageApplication";
 import DashboardLayout from "../src/layouts/DashboardLayout";
 import Contact from "../src/pages/Dashboard/link/Contact";
+import MyTasks from "../src/pages/Dashboard/Volunteer/MyTasks";
 
 
 
@@ -123,6 +124,11 @@ export const router = createBrowserRouter([
             path: "my-donations",
             element: <MyDonations/>
         },
+        {
+            path: "my-tasks",
+            element: <MyTasks/>
+        },
+        
        
         
 
