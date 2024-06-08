@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useUser } from '../../../../hooks/useUser';
 import { toast } from 'react-toastify';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
@@ -10,6 +10,7 @@ const API_URL = 'http://localhost:3000/application';
 const AsVolunteer = () => {
   const axiosSecure = useAxiosSecure();
   const { currentUser, isLoading } = useUser();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -18,6 +19,8 @@ const AsVolunteer = () => {
     newData.applierName = currentUser.name;
     newData.applierEmail = currentUser.email;
     newData.submitted = new Date();
+
+    setIsSubmitting(true);
 
     toast.promise(
       axiosSecure.post(API_URL, newData)
@@ -28,19 +31,14 @@ const AsVolunteer = () => {
         .catch((err) => {
           console.error(err);
           throw new Error('Failed to submit your application');
+        })
+        .finally(() => {
+          setIsSubmitting(false);
         }),
       {
         pending: 'Submitting your application...',
-        success: {
-          render({ data }) {
-            return data;
-          },
-        },
-        error: {
-          render({ error }) {
-            return error.message;
-          },
-        },
+        success: 'Submitted successfully!',
+        error: 'Failed to submit your application',
       }
     );
   };
@@ -62,7 +60,7 @@ const AsVolunteer = () => {
           <form onSubmit={handleFormSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-gray-700 font-bold mb-2" htmlFor="coachName">
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="volunteerName">
                   <FaUser className="inline mr-2 text-secondary" /> Your Name
                 </label>
                 <input
@@ -71,11 +69,11 @@ const AsVolunteer = () => {
                   value={currentUser?.name}
                   readOnly
                   disabled
-                  name="coachName"
+                  name="volunteerName"
                 />
               </div>
               <div>
-                <label className="block text-gray-700 font-bold mb-2" htmlFor="coachEmail">
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="volunteerEmail">
                   <FaEnvelope className="inline mr-2 text-secondary" /> Your Email
                 </label>
                 <input
@@ -84,18 +82,18 @@ const AsVolunteer = () => {
                   value={currentUser?.email}
                   readOnly
                   disabled
-                  name="coachEmail"
+                  name="volunteerEmail"
                 />
               </div>
             </div>
             <div>
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="experience">
+              <label className="block text-gray-700 font-bold mb-2" htmlFor="message">
                 <FaAlignLeft className="inline mr-2 text-secondary" />Send Your Message
               </label>
               <textarea
                 className="w-full px-4 py-2 border border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-                placeholder="About Your Experience"
-                name="experience"
+                placeholder="Send your message"
+                name="message"
                 rows="4"
               ></textarea>
             </div>
@@ -105,8 +103,9 @@ const AsVolunteer = () => {
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                disabled={isSubmitting}
               >
-                Send Your Message
+                {isSubmitting ? 'Sending Your Message...' : 'Send Your Message'}
               </motion.button>
             </div>
           </form>

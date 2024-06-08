@@ -24,7 +24,9 @@ const Hero = () => {
           <div className="md:w-full">
             <p className="text-lg md:text-xl animate-words">
               {words}
+             
             </p>
+           
           </div>
         </div>
       </div>

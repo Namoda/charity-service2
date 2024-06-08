@@ -3,19 +3,43 @@ import React from 'react';
 const donations = [
   {
     id: 1,
-    photo: 'https://via.placeholder.com/400x200',
+    photo: 'https://www.teachtci.com/wp-content/uploads/2020/09/Active-Citizenship.png',
     title: 'Charity Event 1',
-    date: '2024-06-15',
+    date: '2024-03-15',
     time: '10:00 AM',
     place: 'Kind City Park'
   },
   {
     id: 2,
-    photo: 'https://via.placeholder.com/400x200',
+    photo: 'https://st2.depositphotos.com/1518767/6900/i/450/depositphotos_69005549-stock-photo-volunteer-family-separating-donations-stuffs.jpg',
     title: 'Charity Event 2',
-    date: '2024-06-18',
+    date: '2024-05-18',
     time: '2:00 PM',
     place: 'Helping Hands Center'
+  },
+  {
+    id: 3,
+    photo: 'https://bloximages.newyork1.vip.townnews.com/guampdn.com/content/tncms/assets/v3/editorial/2/35/2356b4a0-6a32-11ed-8f9d-f347c7d0b814/637c7204e100f.image.jpg?resize=667%2C500',
+    title: 'Charity Event 3',
+    date: '2024-05-28',
+    time: '8:30 AM',
+    place: 'Super Wole Center'
+  },
+  {
+    id: 3,
+    photo: 'https://resources.karuna.lk/program/charitybanner/7cbe3e35-1df4-4650-84d2-f934edfc5582.jpeg',
+    title: 'Charity Event 3',
+    date: '2024-06-2',
+    time: '8:30 AM',
+    place: 'School Gampaha'
+  },
+  {
+    id: 3,
+    photo: 'https://content.wepik.com/statics/10742328/preview-page0.jpg',
+    title: 'Charity Event 3',
+    date: '2024-06-2',
+    time: '8:30 AM',
+    place: 'School Gampaha'
   },
   // Add more donations as needed
 ];

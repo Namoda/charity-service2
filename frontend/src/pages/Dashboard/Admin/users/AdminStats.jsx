@@ -45,7 +45,7 @@ const AdminStats = ({ users }) => {
           </div>
           <div className="px-4 text-gray-700">
             <h3 className="text-sm tracking-wider">Volunteer</h3>
-            <p className="text-3xl">{data.Volunteers}</p>
+            <p className="text-3xl">{data.volunteers}</p>
           </div>
         </div>
         <div className="flex items-center bg-white border rounded-sm overflow-hidden shadow">
@@ -59,7 +59,9 @@ const AdminStats = ({ users }) => {
             <p className="text-3xl">{data.pendingDonations}</p>
           </div>
         </div>
+       
       </div>
+
     </Slide>
   );
 };

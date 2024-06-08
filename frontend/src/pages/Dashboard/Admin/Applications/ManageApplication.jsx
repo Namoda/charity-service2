@@ -47,9 +47,9 @@ const ManageApplication = () => {
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2">
-                <FaAlignLeft className="inline mr-2 text-secondary" /> Experience
+                <FaAlignLeft className="inline mr-2 text-secondary" /> Message
               </label>
-              <p className="text-gray-800">{application.experience}</p>
+              <p className="text-gray-800">{application.message}</p>
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2">

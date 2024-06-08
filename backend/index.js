@@ -29,8 +29,8 @@ const verifyJWT = (req, res, next) => {
 
 // MONGO DB ROUTES
 
-//const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@music-cons.epjwsxc.mongodb.net/?retryWrites=true&w=majority&appName=music-cons`;
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@charity-service.lyqrs44.mongodb.net/?retryWrites=true&w=majority&appName=charity-service`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}
+@charity-service.lyqrs44.mongodb.net/?retryWrites=true&w=majority&appName=charity-service`;
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
     serverApi: {

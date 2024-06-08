@@ -9,7 +9,7 @@ const PopularVolunteer = () => {
 
   useEffect(() => {
     axiosFetch
-      .get('/popular-volunteers')
+      .get('/volunteers')
       .then((data) => {
         setVolunteers(data.data);
       })
@@ -41,9 +41,10 @@ const PopularVolunteer = () => {
             <div className="flex flex-col gap-6 md:gap-8">
               <img
                 className="rounded-full border-4 border-gray-300 h-24 w-24 mx-auto"
-                src={volunteer?.volunteer?.photoUrl}
+                src={volunteer?.photoUrl}
                 alt=""
               />
+              
               <div className="flex flex-col text-center">
                 <div className="font-medium text-lg dark:text-white text-gray-800">
                   {volunteer?.name}
@@ -51,9 +52,7 @@ const PopularVolunteer = () => {
                 <div className="text-gray-500  whitespace-nowrap">
                   Volunteer
                 </div>
-                <div className="text-gray-500 mb-4 whitespace-nowrap">
-                  Total Students : {volunteer?.totalEnrolled}
-                </div>
+               
                 <div className="flex flex-row items-center justify-center gap-4 text-gray-800 my-auto text-2xl mx-auto md:mx-0">
                   <a className="hover:cursor-pointer text-secondary duration-300">
                     <FaLinkedin />

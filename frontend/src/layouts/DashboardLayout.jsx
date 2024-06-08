@@ -10,6 +10,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Scroll from '../hooks/useScroll';
 import { ClockLoader, HashLoader } from 'react-spinners';
+import { ToastContainer } from 'react-toastify';
 
 const adminNavItems = [
   { to: "/dashboard/admin-home", icon: <BiHomeAlt className="text-2xl" />, label: "Dashboard Home" },
@@ -208,6 +209,7 @@ const DashboardLayout = () => {
       <div className="h-screen overflow-y-auto px-8 flex-1" style={{ backgroundColor: getBackgroundColor() }}>
         <Scroll />
         <Outlet />
+        <ToastContainer />
       </div>
     </div>
   );

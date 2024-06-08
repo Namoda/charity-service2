@@ -76,8 +76,8 @@ const SingleDonation = () => {
         <h1 className='text-5xl font-bold text-center'>Donation  <span className='text-secondary'>Details</span></h1>
         
     <div className='w-[40%] text-center mx-auto my-4'>
-        <p className = 'text-gray-500'>Explore our populer donations . Here is some 
-        populer donations based on how many Donners Enrolled</p>
+        <p className = 'text-gray-500'>"Find our top endowments, highly supported by donors. 
+        These popular picks attract more supporters. Come join us too! !"</p>
     </div>
     </div>
     </div>
@@ -255,9 +255,7 @@ const SingleDonation = () => {
                       </div>
                     </a>
                     <h3>${donation?.price}</h3>
-                    <button onClick={() => handelSelect(donation._id)} title={role === 'admin' || role === 'coach' ? 'Volunteer/Admin Can not be able to select ' ? donation?.AmountCanbeDonations <1 : 'The amount cannot be donated' : 'You can select this donations' } disabled={role === 'admin' || role === 'volunteer' || donation?.AmountCanbeDonations < 1}  className="btn btn-primary w-full text-center bg-secondary py-2 px-6 text-white ">
-                      Enroll Now
-                    </button>
+                   
                     <ul className="list  ">
                       <li className=" flex space-x-3 border-b border-[#ECECEC] mb-4 pb-4 last:pb-0 past:mb-0 last:border-0">
                         <div className="flex-1 space-x-3 flex items-center">
@@ -289,15 +287,7 @@ const SingleDonation = () => {
                         <div className="flex-none">50$</div>
                       </li>
 
-                      <li className=" flex space-x-3 border-b border-[#ECECEC] mb-4 pb-4 last:pb-0 past:mb-0 last:border-0">
-                        <div className="flex-1 space-x-3 flex items-center">
-                          <FaUsers />
-                          <div className=" text-black font-semibold">
-                            Enrolled
-                          </div>
-                        </div>
-                        <div className="flex-none">{donation?.totalEnrolled}</div>
-                      </li>
+                     
 
                       <li className=" flex space-x-3 border-b border-[#ECECEC] mb-4 pb-4 last:pb-0 past:mb-0 last:border-0">
                         <div className="flex-1 space-x-3 flex items-center">

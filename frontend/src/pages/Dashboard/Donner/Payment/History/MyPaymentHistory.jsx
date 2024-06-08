@@ -70,7 +70,7 @@ const MyPaymentHistory = () => {
                     <h1 className='font-bold'>Total Paid : {totalPaidAmount}</h1>
                 </div>
                 <div className="flex flex-col">
-                    <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div className="overflow-x-auto sm:-mx-6 lg:-mx-12">
                         <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                             <div className="overflow-hidden">
                                 <table className="min-w-full text-left text-sm font-light">
@@ -78,7 +78,7 @@ const MyPaymentHistory = () => {
                                         <tr>
                                             <th scope="col" className="px-6 py-4">#</th>
                                             <th scope="col" className="px-6 py-4">Amount</th>
-                                            <th scope="col" className="px-6 py-4">Total Item</th>
+                                          
                                             <th scope="col" className="px-6 py-4">Time</th>
                                         </tr>
                                     </thead>

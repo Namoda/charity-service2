@@ -28,6 +28,8 @@ const Register = () => {
             gender: data.gender,
             address: data.address,
             phone: data.phone,
+            nic: data.nic,
+            province: data.province,
           };
 
           if (user.email && user.displayName) {
@@ -197,7 +199,33 @@ const Register = () => {
             ></textarea>
             {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>}
           </div>
-
+          <div className="mb-4 w-full">
+              <label htmlFor="nic" className="block text-gray-700 font-bold mb-2">
+                <AiOutlineUser className="inline-block mr-2 mb-1 text-lg" />
+                NIC
+              </label>
+              <input 
+                type="text" 
+                placeholder="Enter your name" 
+                {...register("nic", { required: "NIC is required" })} 
+                className="w-full border-gray-300 border rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500" 
+              />
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.nic.message}</p>}
+            </div>
+            <div className="mb-4 w-full">
+              <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
+                <AiOutlineUser className="inline-block mr-2 mb-1 text-lg" />
+                Province
+              </label>
+              <input 
+                type="text" 
+                placeholder="Enter your name" 
+                {...register("province", { required: "Name is required" })} 
+                className="w-full border-gray-300 border rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500" 
+              />
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+            </div>
+        
           <div className="text-center">
             <button type="submit" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-red-500 text-white py-2 px-4 rounded-md transition duration-300">
               Register

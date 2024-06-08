@@ -50,7 +50,7 @@ const Contact = () => {
         </div>
         <div className="mt-8">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951897.2316461113!2d79.84835820035653!3d7.742439643797104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2fa978c1c9fd7%3A0x3bd45b776f7621cb!2sSri%20Lanka!5e0!3m2!1sen!2sus!4v1620514286081!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15839.27249446069!2d79.92165714394066!3d7.0306523875379705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f9cdbed9d9b1%3A0xedfad658ec11530!2sRagama!5e0!3m2!1sen!2slk!4v1717584081224!5m2!1sen!2slk"
             width="100%"
             height="450"
             style={{ border: 0 }}
